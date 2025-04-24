@@ -4,7 +4,9 @@
   "description": "**BA Atelier** es un espacio exclusivo dedicado a la moda de alta costura, donde cada prenda es una obra de arte creada con pasión y atención al detalle. Este repositorio contiene el código para la página web de BA Atelier, que ofrece una experiencia digital única para los amantes de la moda.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "dev:backend",
+    "dev:backend": "cd Backend && npm run dev"
   },
   "keywords": [],
   "author": "",

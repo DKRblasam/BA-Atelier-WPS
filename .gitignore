@@ -6,15 +6,16 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-package-lock.json
 
 # Node modules
 node_modules/
+Backend/node_modules/
 
 # Build output
 dist/
 dist-ssr/
 *.local
+build/
 
 # Editor directories and files
 .vscode/
@@ -30,3 +31,7 @@ dist-ssr/
 # Environment variables
 .env
 .env.local
+
+# Config files
+Backend/config/*.json
+Backend/config/*.mjs
