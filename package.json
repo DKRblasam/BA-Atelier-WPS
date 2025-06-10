@@ -5,10 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "dev": "dev:backend",
     "dev:backend": "cd Backend && npm run dev"
+=======
+    "dev": "concurrently --kill-others-on-fail -n \"BACK,FRONT\" -c \"cyan,green\" \"npm run dev --prefix ./backend\" \"npm run dev --prefix ./frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DKRblasam/BA-Atelier.git"
+>>>>>>> e09be7a41a88c5f155c83bc86ac474ac5a61a1ae
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DKRblasam/BA-Atelier/issues"
+  },
+  "homepage": "https://github.com/DKRblasam/BA-Atelier#readme",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
 }

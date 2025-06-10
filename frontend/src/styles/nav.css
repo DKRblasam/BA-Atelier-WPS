@@ -1,0 +1,214 @@
+/* Navegacion de la pagina */
+
+@media (min-width: 950px) {
+  .nav-pc {
+    grid-area: nav-pc;
+    padding-right: 0px;
+    height: 70px;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .navbar {
+    width: 70%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* Navegación principal */
+  .nav-list {
+    width: 100%;
+    height: 100px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav-list > li {
+    position: relative;
+    /* Necesario para los submenús y tooltips */
+  }
+
+  /* Elementos de navegación */
+  .nav-item {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-icon .sticky {
+    height: 50px;
+  }
+
+  .nav-item svg {
+    width: 55px;
+    /* Ajusta el tamaño del ancho del SVG */
+    height: auto;
+    /* Ajusta el tamaño del alto del SVG */
+    transition: all 0.3s ease;
+    stroke: #d8dbe0;
+  }
+
+  .nav-item:hover svg {
+    stroke: #e9c46a;
+    /* Cambia el color de las líneas */
+    transform: scale(1.1);
+    /* Aumenta el tamaño del SVG */
+  }
+
+  .nav-item:active .nav-icon {
+    stroke: #ff0000;
+    /* Cambia el color de las líneas al hacer clic */
+    transform: scale(1.2);
+    /* Aumenta aún más el tamaño del SVG */
+  }
+
+  /* Tooltips principales */
+  .tooltip {
+    position: absolute;
+    top: 50%;
+    /* Coloca el tooltip arriba del elemento */
+    left: calc(100% + 20px);
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    white-space: wrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Tooltips reducidos */
+  .tooltip .sticky {
+    width: 80%;
+    position: absolute;
+
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    white-space: wrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  li:hover .tooltip {
+    opacity: 1;
+    /* Muestra el tooltip al pasar el mouse */
+    transform: translateX(-50%) translateY(-5px);
+    /* Añade un pequeño movimiento hacia arriba */
+  }
+
+  /* Submenús */
+  .submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    /* Posiciona el submenú justo debajo */
+    left: 0;
+    background-color: #3d4658;
+    display: none;
+    /* Oculta el submenú por defecto */
+    min-width: 100px;
+    width: max-content;
+    box-shadow: 0 4px 6px rgba(58, 58, 58, 0.8);
+    /* Añade una sombra */
+    border-radius: 5px;
+    z-index: 10;
+  }
+
+  .submenu .nav-item {
+    padding: 10px 15px;
+    font-size: 14px;
+    position: relative;
+    /* Para posicionar los sub-tooltips */
+    justify-content: center;
+  }
+
+  .submenu .nav-item:hover {
+    background-color: #535984;
+    /* Fondo al pasar el mouse */
+    color: #ffc800;
+    /* Color del texto al pasar el mouse */
+    border-radius: 5px;
+  }
+
+  .submenu .nav-item:hover svg {
+    background-color: #535984;
+    /* Fondo al pasar el mouse */
+    fill: #ff5e00;
+    /* Color del texto al pasar el mouse */
+    border-radius: 5px;
+  }
+
+  /* Sub-tooltips */
+  .sub-tooltip {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 10px);
+    /* A la derecha del submenú con un pequeño espacio */
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    background-color: #222;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 15;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .submenu .nav-item:hover .sub-tooltip {
+    opacity: 1;
+    /* Muestra el sub-tooltip al pasar el mouse */
+    transform: translateY(-50%) translateX(5px);
+    /* Añade un pequeño movimiento hacia la derecha */
+  }
+
+  /* Mostrar submenú al hacer hover */
+  .nav-list > li:hover .submenu {
+    display: block;
+    /* Muestra el submenú al pasar el mouse */
+    animation: fadeIn 0.3s ease;
+    /* Añade animación suave */
+  }
+
+  /* Animación para el submenú */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
