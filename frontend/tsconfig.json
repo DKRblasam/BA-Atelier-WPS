@@ -1,7 +1,20 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./config/tsconfig.app.json" },
-    { "path": "./config/tsconfig.node.json" }
-  ]
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@cmp/*": ["./src/components/*"],
+      "@lyt/*": ["./src/layouts/*"],
+      "@pgs/*": ["./src/pages/*"],
+      "@uts/*": ["./src/utils/*"],
+      "@sty/*": ["./src/styles/*"],
+      "@ast/*": ["./src/assets/*"]
+    },
+    "baseUrl": "./",
+    "jsx": "preserve",
+    "jsxImportSource": "astro",
+  },
+  
 }
