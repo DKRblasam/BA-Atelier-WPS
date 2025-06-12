@@ -4,16 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "dev": "nodemon --config config/nodemon.json src/server.ts",
     "build": "tsc --project config/tsconfig.json",
     "start": "node build/server.js"
-=======
-    "dev": "nodemon src/server.ts",
-    "build": "tsc",
-    "start": "node build/server.js",
-    "lint": "eslint . --ext .ts"
->>>>>>> e09be7a41a88c5f155c83bc86ac474ac5a61a1ae
   },
   "keywords": [],
   "author": "",
@@ -26,31 +19,21 @@
     "mysql2": "^3.14.0"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@eslint/js": "^9.22.0",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.13.10",
-    "eslint": "^9.22.0",
-    "eslint-plugin-react": "^7.37.4",
-    "globals": "^16.0.0",
-    "nodemon": "^3.1.9",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1"
-=======
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.14.0",
     "@types/supertest": "^6.0.3",
     "eslint": "^9.24.0",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^16.0.0",
     "jest": "^29.7.0",
     "nodemon": "^3.1.9",
     "supertest": "^7.1.0",
     "ts-jest": "^29.3.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
->>>>>>> e09be7a41a88c5f155c83bc86ac474ac5a61a1ae
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.26.1"
   }
 }
