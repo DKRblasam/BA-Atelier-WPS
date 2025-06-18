@@ -4,6 +4,8 @@
   "description": "**BA Atelier** es un espacio exclusivo dedicado a la moda de alta costura, donde cada prenda es una obra de arte creada con pasión y atención al detalle. Este repositorio contiene el código para la página web de BA Atelier, que ofrece una experiencia digital única para los amantes de la moda.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint . --ext .js,.astro,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.astro,.ts,.tsx --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently --kill-others-on-fail -n \"BACK,FRONT\" -c \"cyan,green\" \"pnpm run dev --prefix ./backend\" \"pnpm run dev --prefix ./frontend\""
   },
@@ -20,7 +22,16 @@
   },
   "homepage": "https://github.com/DKRblasam/BA-Atelier#readme",
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "eslint": "^9.28.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.19.0",
+    "eslint-plugin-promise": "^7.2.1"
   },
-  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac"
+  "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.10",
+    "tailwindcss": "^4.1.10"
+  }
 }
