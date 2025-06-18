@@ -1,0 +1,26 @@
+{
+  "name": "frontend",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/node": "^9.2.2",
+    "@clerk/astro": "^2.9.0",
+    "@clerk/localizations": "^3.16.4",
+    "@clerk/themes": "^2.2.49",
+    "@tailwindcss/vite": "^4.1.9",
+    "astro": "^5.9.2",
+    "lottie-web": "^5.13.0",
+    "tailwindcss": "^4.1.9",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@midudev/tailwind-animations": "^0.2.0"
+  }
+}
