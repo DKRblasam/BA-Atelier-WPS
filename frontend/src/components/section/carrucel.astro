@@ -1,0 +1,100 @@
+---
+// src/components/Marquee.astro
+interface Props {
+  text: string;
+  speed?: string; // Controla la velocidad, ej. '40s'
+  backgroundColor?: string; // Color de fondo, ej. 'bg-yellow-400'
+  textColor?: string; // Color de texto, ej. 'text-black'
+  separator?: string; // Separador entre repeticiones
+}
+
+const {
+  text,
+  speed = "40s",
+  backgroundColor = "bg-yellow-400",
+  textColor = "text-black",
+  separator = " • ",
+} = Astro.props;
+
+// Repetimos el texto para asegurar continuidad
+const repeatedText = Array(5).fill(text).join(separator);
+---
+
+<div
+  class:list={[
+    "marquee-container w-full overflow-hidden py-3",
+    backgroundColor,
+    textColor,
+    "animate-fade-in-down animate-duration-950 animate-delay-600",
+  ]}
+>
+  <div class="marquee-wrapper">
+    <div class="marquee-content">
+      <!-- Primer bloque de texto -->
+      <span class="marquee-item">
+        {repeatedText}
+      </span>
+      <!-- Segundo bloque idéntico para continuidad -->
+      <span class="marquee-item">
+        {separator}{repeatedText}
+      </span>
+    </div>
+  </div>
+</div>
+
+<style define:vars={{ speed }}>
+  .marquee-container {
+    position: relative;
+  }
+
+  .marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .marquee-content {
+    display: flex;
+    width: max-content;
+    animation: scroll var(--speed) linear infinite;
+  }
+
+  .marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused; /* Pausa la animación al hacer hover */
+  }
+
+  .marquee-content:hover {
+    animation-play-state: paused; /* Pausa la animación al hacer hover */
+  }
+
+  .marquee-item {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0 2rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  /* Pausar animación al hacer hover (opcional) */
+  /* .marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+  } */
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Mejoras de rendimiento */
+  .marquee-content {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+</style>
