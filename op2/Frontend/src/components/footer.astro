@@ -1,0 +1,174 @@
+---
+// src/components/Footer.astro
+
+---
+
+<footer class="bg-luxury-charcoal text-white py-16">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <!-- Brand Section -->
+      <div class="animate-fade-in">
+        <h3 class="font-playfair text-3xl font-bold mb-6">
+          BA <span class="text-luxury-gold">Atelier</span>
+        </h3>
+        <p class="text-white/80 leading-relaxed mb-6">
+          Creando arte en alta costura desde hace más de 15 años. Cada prenda es
+          una expresión única de elegancia y sofisticación.
+        </p>
+        <div class="flex space-x-4">
+          <a
+            href="#"
+            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300"
+          >
+            <Instagram size={20} />
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300"
+          >
+            <Facebook size={20} />
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-luxury-gold hover:text-luxury-charcoal transition-all duration-300"
+          >
+            <Twitter size={20} />
+          </a>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <div class="animate-fade-in footer-section" data-delay="0.1">
+        <h4 class="font-playfair text-xl font-semibold mb-6 text-luxury-gold">
+          Servicios
+        </h4>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="#"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Alta Costura</a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Consultoría de Moda</a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Arreglos y Transformaciones</a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Eventos Exclusivos</a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Piezas Personalizadas</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Links Section -->
+      <div class="animate-fade-in footer-section" data-delay="0.2">
+        <h4 class="font-playfair text-xl font-semibold mb-6 text-luxury-gold">
+          Enlaces
+        </h4>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="#home"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Inicio</a>
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Servicios</a>
+          </li>
+          <li>
+            <a
+              href="#gallery"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Galería</a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Sobre Nosotros</a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-white/80 hover:text-luxury-gold transition-colors duration-300"
+              >Contacto</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="animate-fade-in footer-section" data-delay="0.3">
+        <h4 class="font-playfair text-xl font-semibold mb-6 text-luxury-gold">
+          Contacto
+        </h4>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <MapPin class="text-luxury-gold" size={18} />
+            <span class="text-white/80">Palermo, Buenos Aires</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <Phone class="text-luxury-gold" size={18} />
+            <span class="text-white/80">+54 11 5555-0123</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <Mail class="text-luxury-gold" size={18} />
+            <span class="text-white/80">info@baatelier.com</span>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <p class="text-white/60 text-sm mb-2">Horarios de Atención:</p>
+          <p class="text-white/80 text-sm">Lunes a Viernes: 10:00 - 19:00</p>
+          <p class="text-white/80 text-sm">Sábados: 10:00 - 16:00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div
+      class="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+    >
+      <p class="text-white/60 text-sm">
+        © 2024 BA Atelier. Todos los derechos reservados.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a
+          href="#"
+          class="text-white/60 hover:text-luxury-gold text-sm transition-colors duration-300"
+        >
+          Términos y Condiciones
+        </a>
+        <a
+          href="#"
+          class="text-white/60 hover:text-luxury-gold text-sm transition-colors duration-300"
+        >
+          Política de Privacidad
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/index.mjs"></script>
+<script>
+  footer();
+</script>
