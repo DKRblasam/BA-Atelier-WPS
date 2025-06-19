@@ -12,7 +12,8 @@
       "@uts/*": ["./src/utils/*"],
       "@sty/*": ["./src/styles/*"],
       "@ast/*": ["./src/assets/*"],
-      "@cmt/*": ["./src/components/sections/*"]
+      "@cmt/*": ["./src/components/sections/*"],
+      "@scrt/*": ["./src/scripts/*"],
     },
     "baseUrl": "./",
     "jsx": "preserve",

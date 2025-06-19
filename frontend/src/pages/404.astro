@@ -1,0 +1,384 @@
+---
+// src/pages/404.astro
+
+// Assets
+import background from "@ast/background.avif";
+
+// scripts
+import f404 from "@/Scripts/index.ts";
+
+// Estilos
+import "@sty/styles__.css";
+
+// Componentes
+import Layout from "@lyt/Layout.astro";
+import Header from "@cmp/section/header.astro";
+import Carrusel from "@cmp/section/carrusel.astro";
+---
+
+<Layout title="404 - Página No Encontrada | BA Atelier">
+  <img id="background" src={background.src} alt="" fetchpriority="high" />
+
+  <Header />
+  <Carrusel
+    text="Página no encontrada"
+    speed="40s"
+    backgroundColor="bg-[#b56576]"
+    textColor="text-white"
+    separator=" ✦ "
+  />
+
+  <main class="error-main">
+    <div class="error-container">
+      <!-- Elementos decorativos -->
+      <div class="bg-decoration">
+        <div class="fabric-pattern"></div>
+        <div class="fabric-pattern"></div>
+        <div class="fabric-pattern"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+      </div>
+
+      <div class="error-content">
+        <div class="error-number">404</div>
+        <h1 class="error-title">Página</h1>
+        <h2 class="error-subtitle">No Encontrada</h2>
+        <p class="error-description">
+          Al igual que una prenda única e irrepetible, esta página parece haber
+          tomado su propio camino. Pero no te preocupes, nuestras creaciones más
+          exclusivas te esperan en el lugar correcto.
+        </p>
+
+        <!-- Separador decorativo igual al index -->
+        <div class="m-auto mt-6 mb-8 bg-[#e26d5c] w-[400px] h-[2px]"></div>
+
+        <div class="action-buttons">
+          <a href="/" class="btn btn-primary">Volver al Inicio</a>
+          <a href="/galeria" class="btn btn-secondary">Explorar Colecciones</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .error-main {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .error-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Elementos decorativos de fondo */
+  .bg-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .fabric-pattern {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(181, 101, 118, 0.2) 0%,
+      transparent 70%
+    );
+  }
+
+  .fabric-pattern:nth-child(1) {
+    top: 10%;
+    right: 20%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .fabric-pattern:nth-child(2) {
+    bottom: 20%;
+    left: 10%;
+    animation: float 8s ease-in-out infinite reverse;
+  }
+
+  .fabric-pattern:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 7s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  .sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #e26d5c;
+    border-radius: 50%;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .sparkle:nth-child(4) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .sparkle:nth-child(5) {
+    top: 60%;
+    right: 15%;
+    animation-delay: 1s;
+  }
+
+  .sparkle:nth-child(6) {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 0.5s;
+  }
+
+  .error-content {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .error-number {
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: bold;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.1em;
+    font-family: "Georgia", serif;
+  }
+
+  .error-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-style: italic;
+    color: #b56576;
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-family: "Georgia", serif;
+  }
+
+  .error-subtitle {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    font-style: italic;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 300;
+    font-family: "Georgia", serif;
+  }
+
+  .error-description {
+    font-size: 1.1rem;
+    color: #3d3d3d;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .btn {
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: #2c2c2c;
+    color: white;
+    border: 2px solid #2c2c2c;
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: #2c2c2c;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #b56576;
+    border: 2px solid #b56576;
+  }
+
+  .btn-secondary:hover {
+    background: #b56576;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(181, 101, 118, 0.3);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .error-main {
+      padding: 20px 15px;
+      min-height: 70vh;
+    }
+
+    .action-buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .fabric-pattern {
+      width: 150px;
+      height: 150px;
+    }
+  }
+</style>
+
+<script>
+  // Efectos interactivos
+  document.addEventListener("DOMContentLoaded", function () {
+    // Efecto de paralaje suave para los elementos decorativos
+    document.addEventListener("mousemove", function (e) {
+      const sparkles = document.querySelectorAll(".sparkle");
+      const patterns = document.querySelectorAll(".fabric-pattern");
+
+      sparkles.forEach((sparkle, index) => {
+        const el = sparkle as HTMLElement;
+        const speed = (index + 1) * 0.01;
+        const x = e.clientX * speed;
+        const y = e.clientY * speed;
+
+        el.style.transform = `translate(${x}px, ${y}px)`;
+      });
+
+      patterns.forEach((pattern, index) => {
+        const el = pattern as HTMLElement;
+        const speed = (index + 1) * 0.005;
+        const x = e.clientX * speed;
+        const y = e.clientY * speed;
+
+        el.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+
+    // Efecto de escritura para los títulos
+    function typeWriter(
+      element: HTMLElement | null,
+      text: string,
+      speed = 150
+    ) {
+      if (!element) return;
+
+      let i = 0;
+      element.innerHTML = "";
+
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+
+      type();
+    }
+
+    // Aplicar efecto de escritura con delay
+    setTimeout(() => {
+      const errorTitle = document.querySelector(
+        ".error-title"
+      ) as HTMLElement | null;
+      if (errorTitle) {
+        typeWriter(errorTitle, "Página", 150);
+      }
+
+      setTimeout(() => {
+        const errorSubtitle = document.querySelector(
+          ".error-subtitle"
+        ) as HTMLElement | null;
+        if (errorSubtitle) {
+          typeWriter(errorSubtitle, "No Encontrada", 100);
+        }
+      }, 800);
+    }, 500);
+
+    // Efecto de entrada para los botones
+    const buttons = document.querySelectorAll(".btn");
+    buttons.forEach((button, index) => {
+      const el = button as HTMLElement;
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+
+      setTimeout(
+        () => {
+          el.style.transition = "all 0.6s ease";
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        },
+        1500 + index * 200
+      );
+    });
+  });
+</script>

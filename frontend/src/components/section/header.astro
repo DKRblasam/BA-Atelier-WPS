@@ -5,6 +5,8 @@ import {
   UserButton,
   SignInButton,
 } from "@clerk/astro/components";
+
+import { header_func } from "@scrt/index.ts";
 ---
 
 <style>
@@ -101,9 +103,10 @@ import {
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0)
     );
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
@@ -226,14 +229,13 @@ import {
         <a href="#sobre-nosotros">Sobre Nosotros</a>
         <a href="#contacto">Contacto</a>
         <SignedOut>
-            <a>
+          <a>
             <SignInButton
               mode="modal"
               class="text-stone-600 hover:text-stone-800 transition-colors duration-300 font-medium text-lg"
             />
           </a>
-          </SignedOut>
-
+        </SignedOut>
       </div>
 
       <!-- Lottie Animation con animación hover -->
@@ -273,6 +275,7 @@ import {
 </header>
 
 <script>
+  
   document.addEventListener("DOMContentLoaded", function () {
     const header = document.getElementById("main-header");
     const navContainer = document.querySelector(".nav-container");
@@ -325,16 +328,20 @@ import {
 
     // Smooth scroll para los enlaces del menú
     document.querySelectorAll('.nav-menu a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
+      anchor.addEventListener("click", function (this: HTMLAnchorElement, e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
+        const href = this.getAttribute("href");
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
         }
       });
     });
   });
+
 </script>
