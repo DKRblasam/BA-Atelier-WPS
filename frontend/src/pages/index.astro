@@ -1,11 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+// SVG
+import background from "@ast/background.avif";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Estilos
+import "@sty/styles__.css";
+
+// import Welcome from "@cmp/Welcome.astro";
+
+// componentes
+import Layout from "@lyt/Layout.astro";
+import Header from "@cmp/section/header.astro";
+import Carrusel from "@cmp/section/carrusel.astro";
+import Hero from "@cmp/section/hero.astro";
+import Services from "@cmp/section/services.astro";
+import Gallery from "@cmp/section/gallery.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <img id="background" src={background.src} alt="" fetchpriority="high" />
+
+  <Header />
+  <Carrusel
+    text="Bienvenido a mi sitio web"
+    speed="40s"
+    backgroundColor="bg-[#b56576]"
+    textColor="text-white"
+    separator=" 🔥 "
+  />
+  <Hero />
+
+  <div class="m-auto mt-6 mb-5 bg-[#e26d5c] w-[700px] h-[2px]"></div>
+
+  <Services />
+  <div class="m-auto mt-6 mb-5 bg-[#e26d5c] w-[700px] h-[2px]"></div>
+
+  <Gallery />
 </Layout>

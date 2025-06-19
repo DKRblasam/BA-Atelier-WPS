@@ -9,16 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
     "@astrojs/node": "^9.2.2",
-    "@clerk/astro": "^2.9.0",
-    "@clerk/localizations": "^3.16.4",
-    "@clerk/themes": "^2.2.49",
+    "@clerk/astro": "^2.9.1",
+    "@clerk/localizations": "^3.16.5",
+    "@clerk/themes": "^2.2.50",
     "@midudev/tailwind-animations": "^0.2.0",
-    "@tailwindcss/vite": "^4.1.9",
-    "astro": "^5.9.2",
-    "lottie-web": "^5.13.0",
-    "tailwindcss": "^4.1.9",
-    "typescript": "^5.8.3"
+    "@tailwindcss/vite": "^4.1.10",
+    "astro": "^5.9.4",
+    "tailwindcss": "^4.1.10"
   }
 }

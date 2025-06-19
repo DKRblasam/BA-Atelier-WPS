@@ -1,22 +1,61 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="@/styles/global.css" />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+
+  <!-- Incluyendo Google Fonts para el estilo del logo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Permanent+Marker&display=swap"
+    rel="stylesheet"
+  />
+
+  <style is:global>
+    @import "tailwindcss";
+
+    @plugin "@midudev/tailwind-animations";
+
+    /* Aplicando las fuentes personalizadas */
+    body {
+      font-family: "Inter", sans-serif;
+    }
+    .font-logo {
+      font-family: "Permanent Marker", cursive;
+    }
+
+    /* Keyframes para la animación de subida */
+    @keyframes riseUp {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Clase para aplicar la animación */
+    .animate-rise {
+      animation: riseUp 3.1s ease-in-out infinite;
+    }
+  </style>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

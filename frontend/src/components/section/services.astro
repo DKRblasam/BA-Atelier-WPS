@@ -1,0 +1,56 @@
+---
+import ServiceItem from "@itm/ServiceItem.astro";
+
+const services = [
+  {
+    title: "Diseño de Alta Costura",
+    description:
+      "Colecciones personalizadas y prendas únicas creadas para clientes exigentes con los más finos materiales.",
+    image: "https://images.unsplash.com/photo-1618354691214-1ff7b3d32a7a",
+    icon: "/icons/needle.svg",
+  },
+  {
+    title: "Consultoría de Moda",
+    description:
+      "Asesoramiento personalizado sobre tendencias, estilo y adaptación de looks a medida de cada cliente.",
+    image: "https://images.unsplash.com/photo-1581090700227-1fd6f928fa9e",
+    icon: "/icons/user.svg",
+  },
+  {
+    title: "Arreglos y Transformaciones",
+    description:
+      "Servicio especializado en la adaptación y modificación de prendas existentes con ajuste perfecto.",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+    icon: "/icons/scissors.svg",
+  },
+  {
+    title: "Eventos Exclusivos",
+    description:
+      "Participación en desfiles, presentaciones y eventos privados de moda para una experiencia única.",
+    image: "https://images.unsplash.com/photo-1605131478873-69b7b3a87961",
+    icon: "/icons/calendar.svg",
+  },
+];
+---
+
+<section id="services" class="py-20 bg-[#ffffff62] background-blur">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold text-lime-600">Nuestros Servicios</h2>
+    <p class="mt-4 text-neutral-500 max-w-2xl m-0-auto">
+      Ofrecemos servicios exclusivos de alta costura, desde diseños
+      personalizados hasta consultoría especializada
+    </p>
+  </div>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto"
+  >
+    {services.map((service) => <ServiceItem {...service} />)}
+  </div>
+
+  <div class="text-center mt-10">
+    <a href="#contacto" class="text-lime-600 font-medium hover:underline">
+      Solicitar Consulta Gratuita
+    </a>
+  </div>
+</section>

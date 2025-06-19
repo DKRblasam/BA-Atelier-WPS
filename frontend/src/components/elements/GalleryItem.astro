@@ -1,0 +1,97 @@
+---
+export interface Props {
+  image: string; // ID de la imagen de Unsplash
+  title: string; // Título del ítem
+  category: string; // Categoría del ítem
+  gradient: string; // Clase de fondo con gradiente
+  index: number; // Índice del ítem para animaciones
+}
+
+const { image, title, category, gradient, index } = Astro.props; // Desestructuración de props
+---
+
+<div
+  class="group relative overflow-hidden rounded-3xl card-minimal hover-lift animate-scale-in bg-white transition-colors duration-500 group-hover:bg-warm-brown/10"
+  style={`animation-delay: ${index * 0.15}s`}
+>
+  <!-- Retraso progresivo en la animación -->
+
+  <!-- Capa de fondo con gradiente (ligeramente visible) -->
+  <div class={`absolute inset-0 ] opacity-35`}></div>
+
+  <!-- Contenedor de la imagen superior -->
+  <div class="relative h-80 overflow-hidden rounded-t-3xl">
+    <!-- Imagen principal del ítem -->
+    <img
+      src={`https://images.unsplash.com/${image}?auto=format&fit=crop&w=800&q=80`}
+      alt={title}
+      class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110  group-hover:opacity-60 group-hover:blur-sm"
+    />
+
+    <!-- Gradiente que aparece en hover -->
+    <div
+      class={`absolute inset-0 ] opacity-0 group-hover:opacity-30 transition-opacity duration-500`}
+    >
+    </div>
+
+    <!-- Contenido emergente al pasar el mouse -->
+    <div
+      class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"
+    >
+      <div class="mb-3">
+        <!-- Etiqueta de categoría -->
+        <span
+          class="inline-block px-4 py-2 bg-white/90
+          text-black text-warm-brown text-sm font-medium rounded-full backdrop-blur-sm"
+        >
+          {category}
+        </span>
+      </div>
+
+      <!-- Título grande -->
+      <h3 class="font-dancing text-3xl font-semibold mb-2 text-shadow">
+        {title}
+      </h3>
+
+      <!-- Descripción corta -->
+      <p class="text-white/90 text-sm font-inter">
+        Pieza única diseñada con materiales de la más alta calidad
+      </p>
+    </div>
+
+    <!-- Borde decorativo que aparece en hover -->
+    <div
+      class="absolute inset-4 border-2 border-white/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+    >
+    </div>
+  </div>
+
+  <!-- Contenido inferior visible siempre -->
+  <div class="p-6 bg-white relative z-10">
+    <div class="flex items-center justify-between">
+      <div>
+        <!-- Título -->
+        <h4
+          class="font-dancing text-2xl font-semibold text-warm-brown group-hover:text-accent-brown transition-colors duration-300"
+        >
+          {title}
+        </h4>
+        <!-- Categoría -->
+        <p class="text-warm-brown/60 text-sm font-inter">
+          {category}
+        </p>
+      </div>
+
+      <!-- Botón circular con flecha -->
+      <button
+        class="w-12 h-12 bg-soft-gray group-hover:bg-accent-brown rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group-hover:bg-neutral-700 "
+      >
+        <span
+          class="text-warm-brown group-hover:text-white text-lg transition-all duration-300 group-hover:scale-125 group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.6)]"
+        >
+          →
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
