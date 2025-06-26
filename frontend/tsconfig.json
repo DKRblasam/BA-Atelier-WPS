@@ -12,7 +12,7 @@
       "@uts/*": ["./src/utils/*"],
       "@sty/*": ["./src/styles/*"],
       "@ast/*": ["./src/assets/*"],
-      "@cmt/*": ["./src/components/sections/*"],
+      "@cmt/*": ["./src/components/section/*"],
       "@scrt/*": ["./src/scripts/*"],
     },
     "baseUrl": "./",

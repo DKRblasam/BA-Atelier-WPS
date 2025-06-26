@@ -1,11 +1,17 @@
+---
+import background from "@ast/background.avif";
+
+// Estilos
+import "@sty/style__.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/BA-favicon-n.avif" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="@/styles/global.css" />
     <title>Astro Basics</title>
   </head>
   <body>
@@ -19,6 +25,10 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Permanent+Marker&display=swap"
     rel="stylesheet"
   />
+
+  <body>
+    <img id="background" src={background.src} alt="" fetchpriority="high" />
+  </body>
 
   <style is:global>
     @import "tailwindcss";
@@ -50,6 +60,10 @@
     }
   </style>
 </html>
+
+<style is:global>
+  @import "tailwindcss";
+</style>
 
 <style>
   html,

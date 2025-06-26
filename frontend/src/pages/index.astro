@@ -3,17 +3,18 @@
 import background from "@ast/background.avif";
 
 // Estilos
-import "@sty/styles__.css";
+import "@sty/style__.css";
 
 // import Welcome from "@cmp/Welcome.astro";
 
 // componentes
 import Layout from "@lyt/Layout.astro";
-import Header from "@cmp/section/header.astro";
-import Carrusel from "@cmp/section/carrusel.astro";
-import Hero from "@cmp/section/hero.astro";
-import Services from "@cmp/section/services.astro";
-import Gallery from "@cmp/section/gallery.astro";
+import Header from "@cmt/header.astro";
+import Carrusel from "@cmt/carrusel.astro";
+import Hero from "@cmt/hero.astro";
+import Services from "@cmt/services.astro";
+import Gallery from "@cmt/gallery.astro";
+import Foot from "@cmt/footer.astro";
 ---
 
 <Layout>
@@ -31,8 +32,10 @@ import Gallery from "@cmp/section/gallery.astro";
 
   <div class="m-auto mt-6 mb-5 bg-[#e26d5c] w-[700px] h-[2px]"></div>
 
-  <Services />
+  <Services id="sevicios" />
   <div class="m-auto mt-6 mb-5 bg-[#e26d5c] w-[700px] h-[2px]"></div>
 
-  <Gallery />
+  <Gallery id="galeria" />
 </Layout>
+
+<Foot />

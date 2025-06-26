@@ -1,0 +1,160 @@
+---
+// Política de Privacidad - BA Atelier
+import background from "@ast/background.avif";
+
+import Layout from "@lyt/Layout.astro";
+import Header from "@cmt/header.astro";
+import Foot from "@cmt/footer.astro";
+
+const title = "Política de Privacidad - BA Atelier";
+const description =
+  "Política de privacidad y protección de datos de BA Atelier. Conoce cómo protegemos tu información personal.";
+---
+
+<Layout>
+  <img id="background" src={background.src} alt="" fetchpriority="high" />
+
+  <Header />
+
+  <main class="py-8 bg-[#fefae074] min-h-screen pt-50 pb-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <header class="text-center mb-12 p-8 bg-white rounded-xl shadow-lg">
+        <h1 class="text-4xl text-gray-800 font-light mb-2 tracking-tight">
+          Política de Privacidad
+        </h1>
+        <p class="text-sm italic text-gray-500">
+          Última actualización: Junio 2025
+        </p>
+      </header>
+
+      <section class="bg-white rounded-xl p-12 shadow-lg leading-relaxed">
+        <div
+          class="mb-12 p-6 bg-gray-100 border-l-4 border-blue-600 rounded-md"
+        >
+          <p class="text-lg text-gray-700 m-0">
+            En <strong class="text-gray-800 font-semibold">BA Atelier</strong>,
+            valoramos y respetamos su privacidad. Esta Política de Privacidad
+            describe cómo recopilamos, utilizamos, protegemos y compartimos su
+            información personal cuando utiliza nuestros servicios de alta
+            costura y visita nuestro sitio web.
+          </p>
+        </div>
+
+        <!-- Secciones -->
+        <article
+          class="mb-12 pb-8 border-b border-gray-200 last:border-none last:mb-0"
+        >
+          <h2 class="text-2xl text-gray-800 font-normal mb-6 tracking-tight">
+            1. Información que Recopilamos
+          </h2>
+
+          <h3 class="text-xl text-gray-700 font-medium mt-8 mb-4">
+            1.1 Información Personal
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Recopilamos la siguiente información cuando usted:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-600">
+            <li>
+              <strong>Solicita nuestros servicios:</strong> Nombre completo, correo,
+              teléfono, dirección postal
+            </li>
+            <li>
+              <strong>Programa una consulta:</strong> Preferencias de estilo, medidas
+              corporales, historial
+            </li>
+            <li>
+              <strong>Asiste a eventos:</strong> Información de contacto, preferencias
+              alimentarias
+            </li>
+            <li>
+              <strong>Realiza pagos:</strong> Información de facturación (gestionada
+              externamente)
+            </li>
+          </ul>
+
+          <h3 class="text-xl text-gray-700 font-medium mt-8 mb-4">
+            1.2 Información de Navegación
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Cuando visita nuestro sitio web, automáticamente recopilamos:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-600">
+            <li>Dirección IP y ubicación</li>
+            <li>Tipo de navegador y dispositivo</li>
+            <li>Páginas visitadas y duración</li>
+            <li>Cookies y tecnologías similares</li>
+          </ul>
+        </article>
+
+        <!-- Repite esta estructura para cada sección -->
+        <article
+          class="mb-12 pb-8 border-b border-gray-200 last:border-none last:mb-0"
+        >
+          <h2 class="text-2xl text-gray-800 font-normal mb-6 tracking-tight">
+            2. Cómo Utilizamos su Información
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Utilizamos su información personal para:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-600">
+            <li>
+              <strong>Servicios de Alta Costura:</strong> Crear diseños personalizados
+            </li>
+            <li>
+              <strong>Consultoría de Moda:</strong> Asesoramiento personalizado
+            </li>
+            <li><strong>Arreglos:</strong> Modificaciones precisas</li>
+            <li><strong>Eventos:</strong> Invitaciones exclusivas</li>
+            <li><strong>Comunicación:</strong> Consultas e información</li>
+            <li>
+              <strong>Mejora del Servicio:</strong> Análisis de preferencias
+            </li>
+          </ul>
+        </article>
+
+        <!-- Reemplaza las siguientes secciones igual que arriba -->
+        <!-- 3. Base Legal -->
+        <!-- 4. Compartir Información -->
+        <!-- 5. Protección y Seguridad -->
+        <!-- 6. Retención de Datos -->
+        <!-- 7. Sus Derechos -->
+        <!-- 8. Cookies -->
+        <!-- 9. Transferencias Internacionales -->
+        <!-- 10. Menores de Edad -->
+        <!-- 11. Cambios -->
+        <!-- 12. Contacto -->
+
+        <!-- Notas, derechos, contacto -->
+        <p
+          class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-md italic text-gray-700 my-6"
+        >
+          Todos los terceros están obligados contractualmente a proteger su
+          información.
+        </p>
+
+        <p
+          class="bg-green-100 border-l-4 border-green-600 p-4 rounded-md text-gray-700 my-6"
+        >
+          Para ejercer estos derechos, contáctenos en
+          <a
+            href="mailto:privacidad@baatelier.com"
+            class="text-blue-600 hover:text-blue-800 underline"
+          >
+            privacidad@baatelier.com
+          </a>
+        </p>
+
+        <div class="bg-gray-100 p-8 rounded-md mt-12 text-center">
+          <p class="italic text-gray-700 text-base">
+            Al utilizar nuestros servicios, usted reconoce haber leído y
+            comprendido esta Política de Privacidad y acepta el procesamiento de
+            su información personal como se describe en este documento.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Foot />
+</Layout>

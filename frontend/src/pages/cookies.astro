@@ -1,0 +1,87 @@
+---
+// Política de Cookies - BA Atelier
+import background from "@ast/background.avif";
+
+import Layout from "@lyt/Layout.astro";
+import Header from "@cmt/header.astro";
+import Foot from "@cmt/footer.astro";
+
+const title = "Política de Cookies - BA Atelier";
+const description =
+  "Información sobre el uso de cookies en el sitio web de BA Atelier. Conoce cómo utilizamos las cookies para mejorar tu experiencia.";
+---
+
+<Layout>
+  <img id="background" src={background.src} alt="" fetchpriority="high" />
+  <Header />
+
+  <main class="py-8 bg-[#fefae074] min-h-screen pt-60">
+    <div class="max-w-3xl mx-auto px-6">
+      <header class="text-center mb-12 p-8 bg-white rounded-xl shadow-lg">
+        <h1 class="text-4xl text-gray-800 font-light mb-2 tracking-tight">
+          Política de Cookies
+        </h1>
+        <p class="text-sm italic text-gray-500">
+          Última actualización: Junio 2025
+        </p>
+      </header>
+
+      <section
+        class="bg-white rounded-xl p-8 md:p-12 shadow-lg leading-relaxed"
+      >
+        <div
+          class="mb-12 p-6 bg-gray-100 border-l-4 border-blue-600 rounded-md"
+        >
+          <p class="text-lg text-gray-700">
+            <strong class="text-gray-800 font-semibold">BA Atelier</strong> utiliza
+            cookies y tecnologías similares para mejorar su experiencia en nuestro
+            sitio web, personalizar contenido y analizar el tráfico. Esta política
+            explica qué son las cookies, cómo las utilizamos y cómo puede gestionarlas.
+          </p>
+        </div>
+
+        <article class="mb-12 pb-8 border-b border-gray-200">
+          <h2 class="text-2xl text-gray-800 font-normal mb-6 tracking-tight">
+            1. ¿Qué son las Cookies?
+          </h2>
+          <p class="text-gray-600 mb-6">
+            Las cookies son pequeños archivos de texto que se almacenan en su
+            dispositivo cuando visita un sitio web. Permiten que el sitio web
+            recuerde sus acciones y preferencias durante un período de tiempo,
+            para que no tenga que volver a configurarlas cuando regrese al sitio
+            o navegue de una página a otra.
+          </p>
+
+          <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+            <h3 class="text-xl text-blue-800 font-medium mb-4">
+              Tipos de Cookies por Duración:
+            </h3>
+            <ul class="list-disc pl-6 space-y-2 text-gray-600">
+              <li>
+                <strong>Cookies de Sesión:</strong> Se eliminan cuando cierra su
+                navegador
+              </li>
+              <li>
+                <strong>Cookies Persistentes:</strong> Permanecen en su dispositivo
+                por un tiempo determinado
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Repite este patrón para las siguientes secciones -->
+        <!-- Puedes continuar con la conversión del resto del contenido con esta misma lógica Tailwind -->
+      </section>
+
+      <div class="mt-12 p-6 bg-gray-200 rounded-lg text-center">
+        <p class="italic text-gray-700 text-sm">
+          Al continuar navegando en nuestro sitio web, acepta el uso de cookies
+          de acuerdo con esta Política de Cookies, a menos que las haya
+          desactivado.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <Foot />
+</Layout>

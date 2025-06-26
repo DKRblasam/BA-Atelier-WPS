@@ -1,56 +1,72 @@
 ---
-import ServiceItem from "@itm/ServiceItem.astro";
+// Importamos el componente que renderizará cada tarjeta de servicio.
+import ServiceItem from "@itm/ServiceItem.astro"; // Ajusta la ruta si es necesario.
 
+// Definimos el array de objetos, cada uno representando un servicio.
+// Cada objeto incluye un "slug" para crear el enlace a su página de detalle.
 const services = [
   {
+    slug: "building",
     title: "Diseño de Alta Costura",
     description:
       "Colecciones personalizadas y prendas únicas creadas para clientes exigentes con los más finos materiales.",
-    image: "https://images.unsplash.com/photo-1618354691214-1ff7b3d32a7a",
+    image: "https://images.unsplash.com/photo-1536867520774-5b4f2628a69b",
     icon: "/icons/needle.svg",
   },
   {
+    slug: "building",
     title: "Consultoría de Moda",
     description:
       "Asesoramiento personalizado sobre tendencias, estilo y adaptación de looks a medida de cada cliente.",
-    image: "https://images.unsplash.com/photo-1581090700227-1fd6f928fa9e",
+    image: "https://images.unsplash.com/photo-1557777586-f6682739fcf3",
     icon: "/icons/user.svg",
   },
   {
+    slug: "building",
     title: "Arreglos y Transformaciones",
     description:
       "Servicio especializado en la adaptación y modificación de prendas existentes con ajuste perfecto.",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+    image: "https://images.unsplash.com/photo-1750341523132-7fb57c49748b",
     icon: "/icons/scissors.svg",
   },
   {
+    slug: "building",
     title: "Eventos Exclusivos",
     description:
       "Participación en desfiles, presentaciones y eventos privados de moda para una experiencia única.",
-    image: "https://images.unsplash.com/photo-1605131478873-69b7b3a87961",
+    image: "https://multiserviciossantafe.com.mx/img/pasarelas_mexico.jpg",
     icon: "/icons/calendar.svg",
   },
+  
 ];
 ---
 
-<section id="services" class="py-20 bg-[#ffffff62] background-blur">
-  <div class="text-center mb-12">
-    <h2 class="text-4xl font-bold text-lime-600">Nuestros Servicios</h2>
-    <p class="mt-4 text-neutral-500 max-w-2xl m-0-auto">
-      Ofrecemos servicios exclusivos de alta costura, desde diseños
-      personalizados hasta consultoría especializada
-    </p>
-  </div>
+<section id="services" class="py-20 bg-[#ffffff62] backdrop-blur-sm">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-lime-600">Nuestros Servicios</h2>
+      <p class="mt-4 text-neutral-500 max-w-2xl mx-auto">
+        Ofrecemos servicios exclusivos de alta costura, desde diseños
+        personalizados hasta consultoría especializada.
+      </p>
+    </div>
 
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto"
-  >
-    {services.map((service) => <ServiceItem {...service} />)}
-  </div>
+    <div
 
-  <div class="text-center mt-10">
-    <a href="#contacto" class="text-lime-600 font-medium hover:underline">
-      Solicitar Consulta Gratuita
-    </a>
+
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8"
+
+    >
+      {services.map((service) => <ServiceItem {...service} />)}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="#contacto"
+        class="text-lime-600 font-medium hover:underline text-lg"
+      >
+        Solicitar Consulta Gratuita
+      </a>
+    </div>
   </div>
 </section>

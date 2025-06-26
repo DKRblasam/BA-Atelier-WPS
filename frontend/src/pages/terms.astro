@@ -1,0 +1,136 @@
+---
+// Componentes
+import Layout from "@lyt/Layout.astro";
+import Header from "@cmt/header.astro";
+import Foot from "@cmt/footer.astro";
+---
+
+<Layout title="Términos y Condiciones - BA Atelier">
+  <Header />
+
+  <main class="terms-policy py-16 bg-[#fefae074] min-h-screen pt-60">
+    <div class="container max-w-4xl mx-auto px-6">
+      <!-- Encabezado -->
+      <header class="text-center mb-12 bg-white p-10 rounded-xl shadow-md">
+        <h1 class="text-4xl font-light tracking-tight text-[#2c3e50] mb-2">
+          Términos y Condiciones
+        </h1>
+        <p class="text-sm text-gray-500 italic">
+          Última actualización: Junio 2025
+        </p>
+      </header>
+
+      <!-- Contenido -->
+      <section
+        class="bg-white rounded-xl shadow-lg px-8 py-12 leading-relaxed text-gray-700"
+      >
+        <div class="space-y-12">
+          <!-- Intro -->
+          <div class="bg-[#f8f9fa] border-l-4 border-[#007bff] p-6 rounded-lg">
+            <p class="text-lg">
+              Bienvenido a <strong>BA Atelier</strong>. Estos términos y
+              condiciones regulan el uso de nuestros servicios de alta costura y
+              consultoría de moda. Al contratarnos, usted acepta cumplir con lo
+              aquí establecido.
+            </p>
+          </div>
+
+          <!-- Secciones -->
+          <section>
+            <h2 class="section-title">1. Servicios Ofrecidos</h2>
+            <ul class="list-section">
+              <li>
+                <strong>1.1</strong> Diseño de alta costura, consultoría personalizada
+                y eventos.
+              </li>
+              <li>
+                <strong>1.2</strong> Servicios 100% adaptados a cada cliente.
+              </li>
+              <li><strong>1.3</strong> Cada diseño es exclusivo y único.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="section-title">2. Proceso de Pedidos y Citas</h2>
+            <ul class="list-section">
+              <li>
+                <strong>2.1</strong> Todo servicio inicia con cita previa.
+              </li>
+              <li>
+                <strong>2.2</strong> En consulta se definen alcances, costos y entregas.
+              </li>
+              <li>
+                <strong>2.3</strong> Se solicita anticipo del 50% para comenzar.
+              </li>
+              <li>
+                <strong>2.4</strong> Cambios posteriores pueden generar costos adicionales.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="section-title">3. Pagos y Facturación</h2>
+            <ul class="list-section">
+              <li>
+                <strong>3.1</strong> Cotización personalizada por proyecto.
+              </li>
+              <li><strong>3.2</strong> Anticipo del 50% requerido.</li>
+              <li><strong>3.3</strong> Saldo antes de la entrega.</li>
+              <li>
+                <strong>3.4</strong> Aceptamos efectivo, transferencia y tarjetas.
+              </li>
+              <li><strong>3.5</strong> IVA incluido cuando aplique.</li>
+            </ul>
+          </section>
+
+          <!-- Repite este mismo patrón para los puntos 4 a 12 -->
+
+          <section>
+            <h2 class="section-title">12. Jurisdicción y Ley Aplicable</h2>
+            <ul class="list-section">
+              <li>
+                <strong>12.1</strong> Rige la ley de los Estados Unidos Mexicanos.
+              </li>
+              <li>
+                <strong>12.2</strong> Cualquier disputa será resuelta en Querétaro,
+                México.
+              </li>
+              <li>
+                <strong>12.3</strong> Se fomentará la solución amigable antes de
+                instancias legales.
+              </li>
+            </ul>
+          </section>
+
+          <!-- Contacto -->
+          <section class="mt-10 bg-gray-100 p-6 rounded-xl">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contacto</h2>
+            <p class="mb-3">
+              Para dudas o aclaraciones, puede comunicarse con nosotros:
+            </p>
+            <ul class="space-y-1">
+              <li>
+                <strong>Email:</strong>
+                <a
+                  href="mailto:info@baatelier.com"
+                  class="text-blue-600 underline">info@baatelier.com</a
+                >
+              </li>
+              <li>
+                <strong>WhatsApp:</strong>
+                <a href="tel:+524423119381" class="text-blue-600 underline"
+                  >+52 442 311 9381</a
+                >
+              </li>
+              <li>
+                <strong>Ubicación:</strong> Santiago de Querétaro, Querétaro, México
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Foot />
+</Layout>

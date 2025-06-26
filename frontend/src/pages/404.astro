@@ -4,21 +4,19 @@
 // Assets
 import background from "@ast/background.avif";
 
-// scripts
-import f404 from "@/Scripts/index.ts";
-
 // Estilos
-import "@sty/styles__.css";
+import "@sty/style__.css";
 
 // Componentes
 import Layout from "@lyt/Layout.astro";
-import Header from "@cmp/section/header.astro";
-import Carrusel from "@cmp/section/carrusel.astro";
+import Header from "@cmt/header.astro";
+import Carrusel from "@cmt/carrusel.astro";
+import Foot from "@cmt/footer.astro";
 ---
 
-<Layout title="404 - Página No Encontrada | BA Atelier">
-  <img id="background" src={background.src} alt="" fetchpriority="high" />
+<img id="background" src={background.src} alt="" fetchpriority="high" />
 
+<Layout title="404 - Página No Encontrada | BA Atelier">
   <Header />
   <Carrusel
     text="Página no encontrada"
@@ -61,6 +59,8 @@ import Carrusel from "@cmp/section/carrusel.astro";
     </div>
   </main>
 </Layout>
+
+<Foot />
 
 <style>
   .error-main {

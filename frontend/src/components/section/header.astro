@@ -6,7 +6,7 @@ import {
   SignInButton,
 } from "@clerk/astro/components";
 
-import { header_func } from "@scrt/index.ts";
+const { color } = Astro.props;
 ---
 
 <style>
@@ -147,18 +147,28 @@ import { header_func } from "@scrt/index.ts";
   }
 
   .nav-menu a {
-    color: #57534e;
-    text-decoration: none;
+    position: relative;
+    display: inline-block;
     font-weight: 500;
     padding: 0.5rem 1rem;
+    color: #242323;
+    text-decoration: none;
     border-radius: 0.5rem;
-    transition: all 0.2s ease;
-    position: relative;
+    transition: all 0.3s ease;
   }
 
+  /* Hover: texto con gradiente, fondo blanco persiste por ::before */
   .nav-menu a:hover {
-    color: #292524;
-    background: rgba(245, 245, 244, 0.8);
+    background-color: rgba(244, 246, 255, 0.8);
+  }
+  .nav-menu a:hover .nav-text-i {
+    background: linear-gradient(
+      90deg,
+      hsla(10, 82%, 65%, 1) 0%,
+      hsla(290, 79%, 13%, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .nav-menu a::after {
@@ -223,16 +233,19 @@ import { header_func } from "@scrt/index.ts";
 
       <!-- Menú de navegación (visible en scroll) -->
       <div id="nav-menu" class="nav-menu flex items-center space-x-6">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#galeria">Galería</a>
-        <a href="#sobre-nosotros">Sobre Nosotros</a>
-        <a href="#contacto">Contacto</a>
+        <a href="/"><span class="nav-text-i">Inicio</span></a>
+        <a href="/#servicios"><span class="nav-text-i">Servicios</span></a>
+        <a href="#galeria"><span class="nav-text-i">Galería</span></a>
+        <a href="/about"
+          ><span class="nav-text-i">Sobre Nosotros</span></a
+        >
+        <a href="/contacto"><span class="nav-text-i">Contacto</span></a>
+
         <SignedOut>
           <a>
             <SignInButton
               mode="modal"
-              class="text-stone-600 hover:text-stone-800 transition-colors duration-300 font-medium text-lg"
+              class="text-[#242323] nav-text-i transition-colors duration-300 font-medium text-lg"
             />
           </a>
         </SignedOut>
@@ -275,7 +288,6 @@ import { header_func } from "@scrt/index.ts";
 </header>
 
 <script>
-  
   document.addEventListener("DOMContentLoaded", function () {
     const header = document.getElementById("main-header");
     const navContainer = document.querySelector(".nav-container");
@@ -343,5 +355,4 @@ import { header_func } from "@scrt/index.ts";
       });
     });
   });
-
 </script>

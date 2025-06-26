@@ -1,0 +1,12 @@
+
+#background {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+  filter:invert(0%) blur(9px);
+  background-color: #e3d5ca;
+}
