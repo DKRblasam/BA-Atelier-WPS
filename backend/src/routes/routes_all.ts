@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getServicios, createServicio } from "../controllers/controlles";
+import { getServicios, createServicio } from "../controllers/controllers";
 
 const router = Router();
 export const BA = {
