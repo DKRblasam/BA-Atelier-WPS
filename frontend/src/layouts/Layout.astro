@@ -1,8 +1,6 @@
 ---
 import background from "@ast/background.avif";
 
-const {title} = Astro.props;
-
 // Estilos
 import "@sty/style__.css";
 ---
@@ -14,7 +12,7 @@ import "@sty/style__.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/BA-favicon-n.avif" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Astro Basics</title>
   </head>
   <body>
     <slot />
