@@ -5,39 +5,71 @@ import ServiceItem from "@itm/ServiceItem.astro"; // Ajusta la ruta si es necesa
 // Definimos el array de objetos, cada uno representando un servicio.
 // Cada objeto incluye un "slug" para crear el enlace a su página de detalle.
 const services = [
+  // CONFECCIÓN
   {
-    slug: "building",
+    slug: "confeccion",
+    category: "Confección",
     title: "Diseño de Alta Costura",
     description:
       "Colecciones personalizadas y prendas únicas creadas para clientes exigentes con los más finos materiales.",
     image: "https://images.unsplash.com/photo-1536867520774-5b4f2628a69b",
     icon: "/icons/needle.svg",
   },
+
+  // CONSULTORÍA (Servicio Especial)
   {
-    slug: "building",
+    slug: "consultoria",
+    category: "Consultoría",
     title: "Consultoría de Moda",
     description:
       "Asesoramiento personalizado sobre tendencias, estilo y adaptación de looks a medida de cada cliente.",
     image: "https://images.unsplash.com/photo-1557777586-f6682739fcf3",
     icon: "/icons/user.svg",
   },
+
+  // REPARACIÓN
   {
-    slug: "building",
-    title: "Arreglos y Transformaciones",
+    slug: "reparacion",
+    category: "Reparación",
+    title: "Arreglos Finos y Transformaciones",
     description:
-      "Servicio especializado en la adaptación y modificación de prendas existentes con ajuste perfecto.",
+      "Adaptación y modificación experta de prendas existentes, manteniendo la elegancia y el ajuste perfecto.",
     image: "https://images.unsplash.com/photo-1750341523132-7fb57c49748b",
     icon: "/icons/scissors.svg",
   },
+
+  // AJUSTE
   {
-    slug: "building",
+    slug: "ajuste",
+    category: "Ajuste",
+    title: "Ajuste Personalizado",
+    description:
+      "Prendas ajustadas a la medida exacta de tu cuerpo, garantizando comodidad, forma y distinción.",
+    image: "https://plus.unsplash.com/premium_photo-1677695581685-57640460aea6",
+    icon: "/icons/ruler.svg",
+  },
+
+  // TAPICERÍA
+  {
+    slug: "tapiceria",
+    category: "Tapicería",
+    title: "Tapicería de Alta Gama",
+    description:
+      "Renovación y confección de tapicería para mobiliario, con materiales nobles y acabados impecables.",
+    image: "https://unsplash.com/premium_photo-1682145899001-447cac8589f1",
+    icon: "/icons/sofa.svg",
+  },
+
+  // EVENTOS
+  {
+    slug: "eventos",
+    category: "Eventos",
     title: "Eventos Exclusivos",
     description:
       "Participación en desfiles, presentaciones y eventos privados de moda para una experiencia única.",
     image: "https://multiserviciossantafe.com.mx/img/pasarelas_mexico.jpg",
     icon: "/icons/calendar.svg",
   },
-  
 ];
 ---
 
@@ -52,10 +84,7 @@ const services = [
     </div>
 
     <div
-
-
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8"
-
     >
       {services.map((service) => <ServiceItem {...service} />)}
     </div>
